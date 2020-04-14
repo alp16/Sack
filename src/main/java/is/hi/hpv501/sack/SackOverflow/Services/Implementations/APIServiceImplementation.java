@@ -313,11 +313,11 @@ public class APIServiceImplementation implements APIService {
                     //}
                     //bæta leikmönnum í arraylist
 
-                    /*for (int j = 0; j < myndalisti.size(); j++) {
+                    for (int j = 0; j < myndalisti.size(); j++) {
                         if (myndalisti.get(j).getPlayerID() == play.getPlayerID()) {
                             play.setMynd(myndalisti.get(j).getMynd());
                         }
-                    }*/
+                    }
                     leikmannalisti.add(play);
                 }
                 return leikmannalisti;

@@ -86,24 +86,14 @@ public class HomeController {
     public List<Teams> getAllTeams() throws IOException {
 
         List teams = apiService.getAllTeams();
-        for(int i=0; i<teams.size();i++){
-            Teams p = (Teams) teams.get(i);
-            teamService.save(p);
-        }
-        return teamService.findAll();
+        return teams;
     }
         
     @RequestMapping(value="/players", method = RequestMethod.GET)
     public List<Player> players() throws IOException {
-        if(playerService.findAll().isEmpty()) {
-            List playerAPI = apiService.getAllPlayers();
-            for (int i = 0; i < playerAPI.size(); i++) {
-                Player p = (Player) playerAPI.get(i);
-                playerService.save(p);
-            }
-        }
 
-        return playerService.findAll();
+        List playerAPI = apiService.getAllPlayers();
+        return playerAPI;
     }
 
 
